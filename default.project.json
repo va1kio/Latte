@@ -2,13 +2,7 @@
   "name": "Latte",
   "tree": {
     "$className": "DataModel",
-
-    "ReplicatedStorage": {
-      "Common": {
-        "$path": "src/shared"
-      }
-    },
-
+    
     "StarterPlayer": {
       "StarterPlayerScripts": {
         "Client": {

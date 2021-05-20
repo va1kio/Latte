@@ -40,11 +40,12 @@ local function ProcessCategories(Category: Folder)
 		-- object, rather than the data returned after requiring the module
 
 		-- In the future, I'll probably add some indicators to let you know rather this module is ignored, or not.
-		if IGNORE_LIST.Categories[Category.Name] then
+		if table.find(IGNORE_LIST.Categories, Category.Name) then
+			Core.warn("currently in an ignored category; " .. Category.Name)
 			for _, possiblyModule in ipairs(Category:GetDescendants()) do
 				if possiblyModule:IsA("ModuleScript") and string.match(possiblyModule.Name, ".%." .. prefix) then
 					preOut[Category.Name][string.gsub(possiblyModule.Name, "%." .. prefix, "")] = possiblyModule
-					Core.warn("loaded " .. possiblyModule.Name .. ".lua...")
+					Core.warn("loaded " .. possiblyModule.Name .. ".lua without injections...")
 				else
 					continue
 				end
@@ -82,12 +83,12 @@ end
 
 local function Initialize()
 	CorrectErrors()
-	Core.println("Ignoring categories; " .. table.unpack(IGNORE_LIST.Categories))
-	Core.println("Ignoring modules; " .. table.unpack(IGNORE_LIST.Modules))
+	Core.println("Ignoring categories; " .. tostring(table.unpack(IGNORE_LIST.Categories) or ""))
+	Core.println("Ignoring modules; " .. tostring(table.unpack(IGNORE_LIST.Modules) or ""))
 	for _, Category in ipairs(script:FindFirstChild("Source"):GetChildren()) do
 		ProcessCategories(Category)
 	end
-	
+
 	for _, folder in pairs(preOut) do
 		for name, module in pairs(folder) do
 			if typeof(module) == "table" then
@@ -103,10 +104,10 @@ local function Initialize()
 			end
 		end
 	end
-	
+
 	for _, folder in pairs(preOut) do
 		for _, module in pairs(folder) do
-			if module.Start and typeof(module) == "table" then
+			if typeof(module) == "table" and module.Start then
 				module:Start()
 			else
 				continue

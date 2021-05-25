@@ -1,3 +1,8 @@
+if game:GetService("RunService"):IsServer() then error("Latte can be only loaded in client context!") end
+
+local Modules = script.Modules
+local Core = require(Modules.Private.Core)
+
 local DEFINED_PREFIXES = {
 	["Components"] = "comp",
 	["Constructors"] = "construct",
@@ -9,9 +14,7 @@ local IGNORE_LIST = {
 	},
 	Modules = {}
 }
-
 local preOut = {}
-local Core = require(script.Private.Core)
 
 local function ProcessCategories(Category: Folder)
 	-- We always liked the idea of making stuff much intuitive for developers
@@ -27,7 +30,7 @@ local function ProcessCategories(Category: Folder)
 	if Category:IsA("Folder") and Category.Name ~= "Private" and DEFINED_PREFIXES[Category.Name] then
 		local prefix = DEFINED_PREFIXES[Category.Name]
 		preOut[Category.Name] = {}
-		Core.Exported[Category.Name] = setmetatable({}, {
+		Core.Out[Category.Name] = setmetatable({}, {
 			__index = function(_, key: string)
 				return preOut[Category.Name][key]
 			end,
@@ -85,7 +88,7 @@ local function Initialize()
 	CorrectErrors()
 	Core.println("Ignoring categories; " .. tostring(table.unpack(IGNORE_LIST.Categories) or ""))
 	Core.println("Ignoring modules; " .. tostring(table.unpack(IGNORE_LIST.Modules) or ""))
-	for _, Category in ipairs(script:FindFirstChild("Source"):GetChildren()) do
+	for _, Category in ipairs(Modules:GetChildren()) do
 		ProcessCategories(Category)
 	end
 
@@ -99,6 +102,8 @@ local function Initialize()
 				if module.Initialize then
 					module:Initialize()
 				end
+				
+				folder[name] = module
 			else
 				continue
 			end
@@ -117,3 +122,4 @@ local function Initialize()
 end
 
 Initialize()
+return {}

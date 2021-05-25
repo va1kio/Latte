@@ -21,6 +21,14 @@ git submodule add https://github.com/va1kio/Latte packages/Latte
 ### Rojo Serve
 Read `Building from source`
 
+### RBXMX
+Use command `rojo build` to build into a RBXMX file
+```
+rojo build --output "export.rbxmx"
+```
+
+and then import `export.rbxmx` into your game, and put it inside `ReplicatedStorage`
+
 ## Building from source
 ### UNIX
 Execute `build.sh`

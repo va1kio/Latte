@@ -1,12 +1,6 @@
 {
   "name": "Latte",
   "tree": {
-    "$className": "DataModel",
-    
-    "ReplicatedStorage": {
-      "Latte": {
-        "$path": "src/shared"
-      }
-    }
+    "$path": "src"
   }
 }

@@ -1,0 +1,1 @@
+rojo build --output "build.rbxlx" ./building.project.json

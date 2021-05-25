@@ -4,5 +4,26 @@ Latte is a modular, object-oriented, and class-based UI framework, meant to be u
 ## Latte is not a replacement of Roact
 Latte does not have anything such as an actual render like Roact, it is only a simple UI framework that follows the philosophy of modular, objects and classes, so you can write better code for your UI.
 
-## Get started
-To use Latte, you need to have the latest installation of Rojo, which can be done by visiting [rojo.space](https://rojo.space). After that, simply just build this project with `rojo build` and open it in Studio.
+## Required tools
+- Rojo
+
+If you use Foreman but you do not have Rojo installed systemwide, use command `foreman install`
+
+You can install Rojo in other methods, check out [the documentation](https://rojo.space)
+
+## Installation
+### Submodule
+Add this repository as a submodule into your packages directory:
+```
+git submodule add https://github.com/va1kio/Latte packages/Latte
+```
+
+### Rojo Serve
+Read `Building from source`
+
+## Building from source
+### UNIX
+Execute `build.sh`
+
+### Windows
+Execute `build.ps1` (may not work, I am not a Windows user)

@@ -88,6 +88,12 @@ function Sort.Bogo(Table)
 	return Table
 end
 
+function Sort.Quick(Table)
+	-- table.sort uses Quicksort, there's really no need to reimplement the QuickSort algorithm
+	table.sort(Table)
+	return Table
+end
+
 return setmetatable(Sort, {
 	__call = function(_, Key, Table)
 		if Sort[Key] and type(Sort[Key]) == "function" and type(Table) == "table" then

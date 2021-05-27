@@ -1,12 +1,10 @@
 local Core = {}
-Core.Signals = require(script.Signals)
-Core.Collections = require(script.Collections)
 Core.Shared = {}
-Core.Out = setmetatable({}, {
+Core.Out = {
 	__index = function(_, key: string)
-		return Core.Exported[key]
+		return Core.Out[key]
 	end,
-})
+}
 
 function Core:Import(ModuleName, Category)
 	if self.Out[Category] then
@@ -26,6 +24,12 @@ function Core.error(...)
 	error("Latte; " .. ..., debug.traceback)
 end
 
-Core.warn("Core.Shared is now deprecated and replaced by Core.Collections")
+for _, possiblyModule in ipairs(script.Parent:GetChildren()) do
+	if possiblyModule:IsA("ModuleScript") and possiblyModule ~= script then
+		Core[possiblyModule.Name] = require(possiblyModule)
+	end
+end
+
+Core.Out = setmetatable({}, Core.Out)
 Core.__index = Core
 return setmetatable({}, Core)

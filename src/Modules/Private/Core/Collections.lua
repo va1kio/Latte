@@ -10,7 +10,7 @@ local function checkConflicts(Table, Name, Verbose)
 	end
 end
 
-function Collections.new(Name, Item)
+function Collections.new(Name)
 	checkConflicts(_collectionsHolder, Name, true)
 	local collectionObject = setmetatable({
 		["Name"] = Name,
@@ -19,6 +19,7 @@ function Collections.new(Name, Item)
 	}, Collections)
 	
 	collectionObject.new = nil
+	table.insert(_collectionsHolder, collectionObject)
 	return collectionObject
 end
 
@@ -98,4 +99,5 @@ function Collections:Destroy()
 	end
 end
 
+Collections.__index = Collections
 return Collections

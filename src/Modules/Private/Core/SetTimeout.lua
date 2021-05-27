@@ -19,10 +19,10 @@ return function(Callback, Interval)
 	end
 	
 	table.insert(_yieldables, {
-		["Timestamp"] = os.clock,
+		["Timestamp"] = os.clock(),
 		["Interval"] = Interval,
-		["Thread"] = coroutine.running
-	}
+		["Thread"] = coroutine.running()
+	})
 	coroutine.yield()
 	Callback()
 end

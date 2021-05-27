@@ -76,7 +76,7 @@ function Sort.Merge(Table)
 	end
 	
 	local halfTotal = math.floor(#Table / 2)
-	return mergeFunc(Sort.Merge{unpack(Table, 1, halfTotal)}), Sort.Merge{unpack(Table, halfTotal + 1)})
+	return mergeFunc(Sort.Merge{unpack(Table, 1, halfTotal)}, Sort.Merge{unpack(Table, halfTotal + 1)})
 end
 
 function Sort.Bogo(Table)
@@ -97,7 +97,7 @@ end
 return setmetatable(Sort, {
 	__call = function(_, Key, Table)
 		if Sort[Key] and type(Sort[Key]) == "function" and type(Table) == "table" then
-			Sort[Key](Table)
+			Sort[Key](table.pack(unpack(Table)))
 		end
 	end
 })

@@ -4,9 +4,6 @@ site_author: '7kayoh'
 docs_dir: docs/
 repo_name: '7kayoh/Latte'
 repo_url: 'https://github.com/7kayoh/Latte'
-nav:
-  - Home: index.md
-  - Core: ./core/index.md
 plugins:
   - search
 markdown_extensions:

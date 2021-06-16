@@ -7,22 +7,22 @@ Methods
 =======
 
 :Import(Name: string, Category: name)
----
+___
 
 Returns the corresponding module found in the category, with the specified name
 
 .warn(...)
----
+___
 
 A wrapper for warn()
 
 .println()
----
+___
 
 A wrapper for print()
 
 .error()
----
+___
 
 A wrapper for error()
 

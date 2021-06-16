@@ -27,13 +27,15 @@ theme:
   icon:
     repo: fontawesome/brands/github-alt
   palette:
-    primary: purple
-    accent: purple
     - scheme: default
+      primary: purple
+      accent: purple
       toggle:
         icon: material/toggle-switch-off-outline
 	name: Switch to dark theme
     - scheme: slate
+      primary: purple
+      accent: purple
       toggle:
         icon: material/toggle-switch
 	name: Switch to light theme

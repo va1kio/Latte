@@ -1,0 +1,11 @@
+site_name: Latte Framework
+site_description: 'Lightweight, Performant and Maintainable Framework'
+site_author: '7kayoh'
+docs_dir: docs/
+repo_name: '7kayoh/Latte'
+repo_url: 'https://github.com/7kayoh/Latte'
+nav:
+    - Home: index.md
+    - Core: ./core/index.md
+theme:
+  name: 'material'

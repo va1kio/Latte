@@ -4,7 +4,7 @@ The core module is the main module for Latte, it serves system-level functions, 
 ## Methods
 
 
-!!! abstract :Import(Name: string, Category: name)
+!!! :Import(Name: string, Category: name)
 Returns the corresponding module found in the category, with the specified name
 
 

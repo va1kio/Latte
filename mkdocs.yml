@@ -6,33 +6,46 @@ repo_name: '7kayoh/Latte'
 repo_url: 'https://github.com/7kayoh/Latte'
 plugins:
   - search
+copyright: Copyright &copy; 2020 - 2021 7kayoh
 markdown_extensions:
   - admonition
-  - pymdownx.highlight:
-      linenums: true
+  - pymdownx.keys
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.highlight
   - footnotes
+  - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+     custom_checkbox: true
 theme:
   name: 'material'
+  custom_dir: overrides
+  font: false
   features:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
     - navigation.top
+    - header.autohide
   icon:
+    logo: material/book
     repo: fontawesome/brands/github-alt
   palette:
-    - scheme: default
-      primary: purple
-      accent: purple
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-sunny
         name: Switch to dark theme
-    - scheme: slate
-      primary: purple
-      accent: purple
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-night
         name: Switch to light theme

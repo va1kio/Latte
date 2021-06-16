@@ -6,18 +6,15 @@ The sort module is used for table sorting, from the native Quicksort implementat
 Methods
 =======
 
-.Bubble(Table: table)
-___
+!!! abstract .Bubble(Table: table)
+
 Sorts the table with bubble sort
 
-.Merge(Table: table)
-___
+!!! abstract .Merge(Table: table)
 Sorts the table with merge sort
 
-.Quick(Table: table)
-___
+!!! abstract .Quick(Table: table)
 A wrapper for `table.sort`, `table.sort` uses the Quicksort algorithm
 
-.Bogo(Table: table)
-___
-A joke: You shouldn't use this in production
+!!! abstract .Bogo(Table: table)
+A joke; You shouldn't use this in production

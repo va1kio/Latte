@@ -7,4 +7,5 @@ This does not work with Vanilla Lua, as it uses `RunService`, a Roblox exclusive
 
 Methods
 =======
-(Callback: function, Interval: number?)
+!!! abstract (Callback: function, Interval: number?)
+Creates a new TimeoutObject, fires the Callback function after the specified time has passed

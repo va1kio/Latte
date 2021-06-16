@@ -5,28 +5,22 @@ A collection is a storage object, used to store data and to be shared between ea
 
 Constructors
 ============
-.new(Name: string)
-___
+!!! abstract .new(Name: string)
 Creates a new collection, the name should be unique.
 
 Methods
 =======
-:Get(Name: string)
-___
+!!! abstract :Get(Name: string)
 Gets a collection if it exists
 
-:Append(Name: string, Value: any)
-___
+!!! abstract :Append(Name: string, Value: any)
 Appends a new data value into a collection, name must be unique
 
-:Increment(Name: string, Delta: number)
-___
+!!! abstract :Increment(Name: string, Delta: number)
 Increments an existing data value, the value must be a number at first
 
-:Remove(Name: string)
-___
+!!! abstract :Remove(Name: string)
 Removes an existing data value from the collection
 
-:Destroy()
-___
+!!! abstract :Destroy()
 Destroys the collection, this removes every single data value or collection, found in the collection. Collection will be completely locked after being destroyed.

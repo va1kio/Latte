@@ -6,25 +6,20 @@ Signals are the most preferable way to have communication between each other in 
 Constructors
 ============
 
-.new(Name: string)
-___
+!!! abstract .new(Name: string)
 Creates a new Signal
 
 Methods
 =======
 
-:GetSignal(Name: string)
-___
+!!! abstract :GetSignal(Name: string)
 Gets the corresponding Signal with the name
 
-:Emit(...)
-___
+!!! abstract :Emit(...)
 Fires the Signal with the parameters, all registered functions will be called
 
-:Register(Callback: function)
-___
+!!! abstract :Register(Callback: function)
 Register a callback to the Signal. Parameters within the callback are the parameters passed by :Emit()
 
-:Destroy()
-___
+!!! abstract :Destroy()
 Do clean up on the Signal, all registered callbacks are cleared, removing the Signal itself from the memory

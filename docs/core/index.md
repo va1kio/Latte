@@ -6,24 +6,16 @@ The core module is the main module for Latte, it serves system-level functions, 
 Methods
 =======
 
-:Import(Name: string, Category: name)
-___
-
+!!! abstract :Import(Name: string, Category: name)
 Returns the corresponding module found in the category, with the specified name
 
-.warn(...)
-___
-
+!!! abstract .warn(...)
 A wrapper for warn()
 
-.println()
-___
-
+!!! abstract .println()
 A wrapper for print()
 
-.error()
-___
-
+!!! abstract .error()
 A wrapper for error()
 
 Libraries

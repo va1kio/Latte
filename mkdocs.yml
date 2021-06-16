@@ -5,7 +5,35 @@ docs_dir: docs/
 repo_name: '7kayoh/Latte'
 repo_url: 'https://github.com/7kayoh/Latte'
 nav:
-    - Home: index.md
-    - Core: ./core/index.md
+  - Home: index.md
+  - Core: ./core/index.md
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      linenums: true
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 theme:
   name: 'material'
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+  icon:
+    repo: fontawesome/brands/github-alt
+  palette:
+    primary: purple
+	accent: purple
+	- scheme: default
+	  toggle:
+	    icon: material/toggle-switch-off-outline
+	    name: Switch to dark theme
+	- scheme: slate
+	  toggle:
+	    icon: material/toggle-switch
+	    name: Switch to light theme

@@ -28,12 +28,12 @@ theme:
     repo: fontawesome/brands/github-alt
   palette:
     primary: purple
-	accent: purple
-	- scheme: default
-	  toggle:
-	    icon: material/toggle-switch-off-outline
-	    name: Switch to dark theme
-	- scheme: slate
-	  toggle:
-	    icon: material/toggle-switch
-	    name: Switch to light theme
+    accent: purple
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+	name: Switch to dark theme
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+	name: Switch to light theme

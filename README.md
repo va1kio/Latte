@@ -1,3 +1,5 @@
+[![Publish docs via GitHub Pages](https://github.com/7kayoh/Latte/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/7kayoh/Latte/actions/workflows/main.yml)
+
 # Latte
 Latte is a modular, object-oriented, and class-based UI framework, meant to be used in production for Roblox experiences.
 

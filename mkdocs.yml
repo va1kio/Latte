@@ -32,10 +32,10 @@ theme:
       accent: purple
       toggle:
         icon: material/toggle-switch-off-outline
-	name: Switch to dark theme
+        name: Switch to dark theme
     - scheme: slate
       primary: purple
       accent: purple
       toggle:
         icon: material/toggle-switch
-	name: Switch to light theme
+        name: Switch to light theme

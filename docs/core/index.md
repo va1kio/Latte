@@ -2,23 +2,17 @@
 The core module is the main module for Latte, it serves system-level functions, methods, and data values
 
 ## Methods
-
-
-!!! :Import(Name: string, Category: name)
+!!! abstract ":Import(Name: string, Category: name)"
 Returns the corresponding module found in the category, with the specified name
 
-
-!!! abstract .warn(...)
+!!! abstract ".warn(...)"
 A wrapper for warn()
 
-
-!!! abstract .println()
+!!! abstract ".println()"
 A wrapper for print()
 
-
-!!! abstract .error()
+!!! abstract ".error()"
 A wrapper for error()
-
 
 ## Libraries
 The core also holds reference for other system-level libraries, such as Sort, SetTimeout, Collections, Signals.
